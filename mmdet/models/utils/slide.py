@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# Slide-Transformer: Hierarchical Vision Transformer with Local Self-Attention
+# Modified by Zhuofan Xia 
+# --------------------------------------------------------
+
 import torch
 import torch.nn as nn
 import einops
