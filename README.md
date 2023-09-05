@@ -56,7 +56,7 @@ python tools/test.py <CONFIG_FILE> <DET_CHECKPOINT_FILE> --eval bbox segm
 bash tools/dist_test.sh <CONFIG_FILE> <DET_CHECKPOINT_FILE> <GPU_NUM> --eval bbox segm
 ```
 
-**Please notice: Before training or evaluation, please set the `data_root` variable in `configs/_base_/data/coco_detection.py` (RetinaNet) and `configs/_base_/data/coco_instance.py` (Mask R-CNN & Cascade Mask R-CNN) to the path where MS-COCO data stores.**
+**Please notice: Before training or evaluation, please set the `data_root` variable in `configs/_base_/datasets/coco_detection.py` (RetinaNet) and `configs/_base_/datasets/coco_instance.py` (Mask R-CNN & Cascade Mask R-CNN) to the path where MS-COCO data stores.**
 
 Since evaluating models needs no pretrain weights, you can set the `pretrained = None` in `<CONFIG_FILE>`.
 
@@ -74,6 +74,11 @@ bash tools/dist_train.sh <CONFIG_FILE> <GPU_NUM>
 **Please notice: Make sure the `pretrained` variable in `<CONFIG_FILE>` is correctly set to the path of pretrained DAT model.**
 
 In our experiments, we typically use 4 nodes of NVIDIA A100 GPU (40GB) to train the models, so the learning rates are scaled to 4 times of the default values for each detector.
+
+## Acknowledgements
+
+This code is developed on the top of [Swin Transformer](https://github.com/microsoft/Swin-Transformer), we thank to their efficient and neat codebase. The computational resources supporting this work are provided by [Hangzhou
+High-Flyer AI Fundamental Research Co.,Ltd](https://www.high-flyer.cn/).
 
 ## Citation
 
