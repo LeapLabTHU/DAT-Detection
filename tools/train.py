@@ -21,6 +21,7 @@ from mmdet.utils import (collect_env, get_device, get_root_logger,
                          replace_cfg_vals, setup_multi_processes,
                          update_data_root)
 
+import models
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
